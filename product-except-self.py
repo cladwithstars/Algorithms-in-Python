@@ -15,3 +15,8 @@ def productExceptSelf(nums):
         rtn.append(prod)
     
     return rtn 
+
+
+
+
+
