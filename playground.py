@@ -6,4 +6,13 @@ def fib(n):
     return b
 
 # print(fib(5))
-print(fib(15))
+# print(fib(15))
+
+def factorial(num):
+    if num == 1:
+        return 1
+    elif num == 2:
+        return 2
+    return num*factorial(num-1)
+
+print(factorial(3))
