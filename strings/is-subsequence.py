@@ -7,27 +7,18 @@ def isSubsequence(s, t):
     and so on.
     We can use python's index() method here and just compare all in t. 
     """
-    #First check if subset
+    currString = ""
+    sIdx = 0 # keep track of where we are in the s string
+    tIdx = 0 # keep track of where we are in the t string
+    while sIdx < len(s) and tIdx < len(t):
+        if s[sIdx] == t[tIdx]: #found a match for the ch of s at idx sIdx, so can move on
+            currString += s[sIdx]
+            tIdx += 1
+            sIdx += 1
+        else: #not a match
+            tIdx += 1
+    return currString == s
     
-    sChars = set(s)
-        
-    for ch in sChars:
-        if ch not in t or t.count(ch) < s.count(ch):
-            return False
-        
-    stack = [ch for ch in s][::-1]
-    print(stack)
-    seen = set()
-    
-    for ch in t:
-        if ch in sChars:
-            seen.add(ch)
-            if stack:
-                if ch not in seen and ch != stack.pop():
-                    return False
-            else:
-                return True
-    return True
 print(isSubsequence('leetcode', 'yyylyyyeyyyeyyytycyoyydye') )
 
 print(isSubsequence('abc', 'hhbabc'))

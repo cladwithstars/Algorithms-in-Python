@@ -1,4 +1,5 @@
 
+import collections
 def productExceptSelf(nums):
     """
     given array of integers, nums, return a new array arr where arr[i] is equal to the product of all ints in nums except the int at index i 
