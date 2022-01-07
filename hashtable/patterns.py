@@ -8,16 +8,14 @@ def solution(strings, patterns):
     d = dict()
     seen = set()
     for i in range(len(patterns)):
-        
         if patterns[i] in d:
             if d[patterns[i]] != strings[i]:
                 return False
-            seen.add(strings[i])
         else:
             if strings[i] in seen:
                 return False
-            seen.add(strings[i])
             d[patterns[i]] = strings[i]
+        seen.add(strings[i])
             
     return True
 
