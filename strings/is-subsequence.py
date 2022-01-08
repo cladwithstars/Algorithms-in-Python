@@ -1,11 +1,6 @@
 def isSubsequence(s, t):
     """
-    (1) First check if s is a subset of t. If not, return False 
-    
-    (2) Now that we know all the characters in s are in t as well, we just need to make sure that the order is right.
-    I.e., we need to ensure that the first character in s also appears first in t, second character in s also appears second in t,
-    and so on.
-    We can use python's index() method here and just compare all in t. 
+    s, t are strings - return whether s is a subsequence of t. 
     """
     currString = ""
     sIdx = 0 # keep track of where we are in the s string
@@ -19,8 +14,8 @@ def isSubsequence(s, t):
             tIdx += 1
     return currString == s
     
-print(isSubsequence('leetcode', 'yyylyyyeyyyeyyytycyoyydye') )
+print(isSubsequence('leetcode', 'yyylyyyeyyyeyyytycyoyydye') ) #True
 
-print(isSubsequence('abc', 'hhbabc'))
+print(isSubsequence('abc', 'hhbabc')) #True
 
-print(isSubsequence('abc', 'hhacb'))
+print(isSubsequence('abc', 'hhacb')) # False
