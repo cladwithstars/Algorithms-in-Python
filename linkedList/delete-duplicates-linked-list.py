@@ -16,8 +16,6 @@ def deleteDuplicates(head):
         while curr.next is not None and curr.next.val == curr.val:
             next_one = curr.next.next
             curr.next = next_one
-            
-            
             if not curr.next:
                 return head
         curr = curr.next

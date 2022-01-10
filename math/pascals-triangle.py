@@ -1,7 +1,6 @@
 
 def generate(numRows):
     """
-
     Args:
         numRows (int): number of rows of pascals' triangle to generate
 
