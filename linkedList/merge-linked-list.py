@@ -11,26 +11,20 @@ class ListNode:
         l.append(None)
         return str(l)
 
-def mergeLists(l1, l2):
+def mergeLists(list1, list2):
     head = mergedList = ListNode(0)
-        
-    while l1 and l2:
-        if l1.val >= l2.val:
-            mergedList.next = l2
-            l2 = l2.next
+            
+    while list1 and list2:
+        if list1.val < list2.val:
+            mergedList.next = ListNode(list1.val)
+            list1 = list1.next
+            mergedList = mergedList.next
+        else:
+            mergedList.next = ListNode(list2.val)
+            list2 = list2.next
             mergedList = mergedList.next
             
-        elif l2.val > l1.val:
-            mergedList.next = l1
-            l1 = l1.next
-            mergedList = mergedList.next
-            
-    if l2:
-        #append rest of l2 to merged list
-        mergedList.next = l2
-    elif l1:
-        #append rest of l1 to merged list
-        mergedList.next = l1
+    mergedList.next = list1 if list1 else list2
     
     return head.next
 
