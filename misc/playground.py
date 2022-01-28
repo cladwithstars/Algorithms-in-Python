@@ -15,4 +15,9 @@ def factorial(num):
         return 2
     return num*factorial(num-1)
 
-print(factorial(3))
+from itertools import product
+
+nums = [1, 9, 3, 4]
+
+for num in product(nums, repeat=2):
+    print(list(num))
