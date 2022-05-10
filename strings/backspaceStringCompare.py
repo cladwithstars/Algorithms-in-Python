@@ -5,11 +5,8 @@ def compare(s, t):
         while i < len(s):
             if s[i] != '#':
                 stack.append(s[i])
-            else:
-                if not stack:
-                    continue
-                else:
-                    stack.pop()
+            elif stack:
+                stack.pop()
             i+=1
         return ''.join(stack)
     return process(s) == process(t)
